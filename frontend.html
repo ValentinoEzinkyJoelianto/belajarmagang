@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kompilasi - Frontend</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">TokoKamera</a>
+            
+            <nav class="main-nav">
+                <a href="index.html">Backend</a>
+                <a href="frontend.html" class="active">Frontend</a>
+                <a href="mobile.html">Mobile</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="search" id="search-box" placeholder="Cari kamera...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="cart-button" id="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Produk Terbaru</h1>
+
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 20px;">
+            Harga Produk Tertinggi: 
+            <strong id="max-price-display" style="color: #007bff;">Memuat...</strong>
+        </p>
+        
+        <div class="product-grid" id="product-grid">
+            </div>
+    </main>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Keranjang Belanja</h2>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="cart-items-container">
+                <p>Keranjangmu kosong.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cart-total">Rp 0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="frontend.js"></script>
+</body>
+</html>
