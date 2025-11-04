@@ -81,26 +81,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const jsonFetchResultEl = document.getElementById('json-fetch-result');
     if (jsonFetchResultEl) {
-        jsonFetchResultEl.innerText = "Memuat data JSON dari API..."; 
 
-        fetch('https://fakestoreapi.com/products?limit=5') 
-            .then(response => {
+        async function ambilDataProduk() {
+            try {
+                const response = await fetch('https://fakestoreapi.com/products?limit=5');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json(); 
-            })
-            .then(data => {
-                    jsonFetchResultEl.innerHTML = '';
-                    data.forEach(produk => {
+                const data = await response.json();
+                data.forEach(produk => {
                         const p = document.createElement('p');
                         p.innerText = `Produk: "${produk.title}" (Kategori: ${produk.category}) (Harga: $${produk.price})`;
                         jsonFetchResultEl.appendChild(p);
                     });
-            })
-            .catch(error => {
-                console.error('Error fetching JSON:', error);
-                jsonFetchResultEl.innerText = "Gagal memuat data JSON dari API.";
-            });
+
+            } catch (error) {
+                console.error('Gagal memuat data:', error);
+                jsonFetchResultEl.innerText = "Gagal memuat data JSON.";
+            }
+        }
+        ambilDataProduk();
     }
 });
