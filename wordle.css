@@ -1,0 +1,73 @@
+/* Gaya Dasar */
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Gaya Card Utama */
+.product-card {
+  width: 300px; /* Lebar Card */
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden; /* Penting agar gambar tidak keluar dari border radius */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Efek Box Shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Efek saat dihover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya Gambar */
+.product-image {
+  height: 200px; /* Tinggi area gambar */
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+  display: block;
+}
+
+/* Gaya Detail Produk */
+.product-details {
+  padding: 15px;
+  text-align: left;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+/* Gaya Harga */
+.product-price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara harga diskon dan harga asli */
+}
+
+/* Harga Diskon */
+.discount-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e63946; /* Warna merah untuk harga diskon */
+}
+
+/* Harga Asli yang Dicoret */
+.original-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through; /* Efek coretan */
+}
